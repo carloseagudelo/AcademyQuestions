@@ -15,18 +15,21 @@ default: &default
   pool: 5
   username: root
   password:
-  host: localhost
+  host: 127.0.0.1
+  socket: /opt/lampp/var/mysql/mysql.sock
 
 development:
   <<: *default
-  database: AcademyQuestions_development
+  database: AcademyQuestions_dev
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: AcademyQuestions_test
+
+# PARA EL AMBIENTE DE TETS SE DEJA COMENTADO
+#test:
+#  <<: *default
+#  database: AcademyQuestions_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -46,9 +49,10 @@ test:
 #
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
-#
-production:
-  <<: *default
-  database: AcademyQuestions_production
-  username: AcademyQuestions
-  password: <%= ENV['ACADEMYQUESTIONS_DATABASE_PASSWORD'] %>
+
+# PARA EL AMBIENTE DE PROUCION SE DEJA COMENTADO
+#production:
+#  <<: *default
+#  database: AcademyQuestions_production
+#  username: AcademyQuestions
+#  password: <%= ENV['ACADEMYQUESTIONS_DATABASE_PASSWORD'] %>
